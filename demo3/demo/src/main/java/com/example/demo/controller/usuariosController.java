@@ -26,4 +26,16 @@ public class usuariosController {
     public usuariosModel salvar(@RequestBody usuariosModel usuario){ return repository.save(usuario);}
     @DeleteMapping("/Deletar/{id}")
     public void  deletar(@PathVariable int id){ repository.deleteById(id);}
+    @GetMapping("BuscarCPF/{CPF}")
+    public usuariosModel buscarPorCPF(@PathVariable String CPF){return repository.findByCPF(CPF);}
+    @GetMapping("/BuscarNOME/{NOME}")
+    public List<usuariosModel> buscarPorNome(@PathVariable String NOME){return repository.findByNOME(NOME);}
+    @GetMapping("/KEEPGOINGBROOH") // Encontra pessoa que tem JAVA no nome
+    public List<usuariosModel> procuraNomeJava(){return repository.encontraPessoaJava();}
+    @GetMapping("pesquisaPorCaracteristicas/{NOME}/{SEXO}/{TIPO_SANGUINEO}")
+    public List<usuariosModel> pesquisaPorCaracteristicas(@PathVariable String NOME, @PathVariable String SEXO, @PathVariable String TIPO_SANGUINEO){
+        return repository.pesquisaPorCaracteristicas(NOME,SEXO,TIPO_SANGUINEO);
+    }
+    @GetMapping("/MaiorPessoa")
+    public List<usuariosModel> maiorDeIdade(){return  repository.maiorDeIdade();}
 }

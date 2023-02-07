@@ -13,8 +13,8 @@ public class usuariosModel {
     @Id
     @Column(name = "ID")
     private int ID;
-    @Column(name = "Nome")
-    private String nome;
+    @Column(name = "NOME")
+    private String NOME;
     @Column(name = "CPF")
     private String CPF;
     @Column(name = "SEXO")

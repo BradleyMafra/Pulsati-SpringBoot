@@ -19,4 +19,12 @@ public class filmeController {
     public filmeModel adicionar(@RequestBody filmeModel filme){return repository.save(filme);}
     @DeleteMapping("/Deletar/{id}")
     public void deletar(@PathVariable int id){repository.deleteById(id);}
+    @GetMapping("/BuscarPorData/{DATA_LANCAMENTO}")
+    public List<filmeModel> buscarPorData(@PathVariable int DATA_LANCAMENTO){return repository.encontrarPelaData();}
+    @GetMapping("/BuscarPais/{PAIS_ORIGEM}")
+    public List<filmeModel> buscarPais(@PathVariable String PAIS_ORIGEM){return repository.encontrarPais(PAIS_ORIGEM);}
+    @GetMapping("/BuscarData/{DATA_LANCAMENTO}")
+    public List<filmeModel> buscarData(@PathVariable String DATA_LANCAMENTO){return  repository.encontrarData(DATA_LANCAMENTO);}
+    @GetMapping("/QuantidadeVendas")
+    public List<filmeModel> encontrarMaiorVenda(){return repository.ordenarMaiorVenda();}
 }

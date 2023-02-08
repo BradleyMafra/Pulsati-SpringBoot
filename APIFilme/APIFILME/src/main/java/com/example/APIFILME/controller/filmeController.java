@@ -1,4 +1,5 @@
 package com.example.APIFILME.controller;
+import java.sql.Date;
 import java.util.List;
 import com.example.APIFILME.model.filmeModel;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class filmeController {
     @GetMapping("/BuscarPais/{PAIS_ORIGEM}")
     public List<filmeModel> buscarPais(@PathVariable String PAIS_ORIGEM){return repository.encontrarPais(PAIS_ORIGEM);}
     @GetMapping("/BuscarData/{DATA_LANCAMENTO}")
-    public List<filmeModel> buscarData(@PathVariable String DATA_LANCAMENTO){return  repository.encontrarData(DATA_LANCAMENTO);}
+    public List<filmeModel> buscarData(@PathVariable Date DATA_LANCAMENTO){return  repository.encontrarData(DATA_LANCAMENTO);}
     @GetMapping("/QuantidadeVendas")
     public List<filmeModel> encontrarMaiorVenda(){return repository.ordenarMaiorVenda();}
 }

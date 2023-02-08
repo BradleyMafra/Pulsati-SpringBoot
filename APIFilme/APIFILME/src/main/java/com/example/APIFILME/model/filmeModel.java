@@ -4,9 +4,10 @@ import jakarta.persistence.Id;
 import lombok.Data;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import java.sql.Date;
 
 @Data
-@Table(name = "EXERCICIO_FILME")
+@Table(name = "ANA_FILMES")
 @Entity
 public class filmeModel {
     @Id
@@ -17,7 +18,7 @@ public class filmeModel {
     @Column(name = "DESCRICAO")
     private String DESCRICAO;
     @Column(name = "DATA_LANCAMENTO")
-    private int DATA_LANCAMENTO;
+    private Date DATA_LANCAMENTO;
     @Column(name = "QUANTIDADE_VENDAS")
     private int QUANTIDADE_VENDAS;
     @Column(name = "PAIS_ORIGEM")

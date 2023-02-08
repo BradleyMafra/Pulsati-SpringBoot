@@ -23,7 +23,7 @@ public class tarefaController {
     public void deletarTarefa(@PathVariable int id_tarefa){repository.deleteById(id_tarefa);}
     @GetMapping("/filtraStatus/{STATUS}")
     public List<tarefaModel> filtrarPorStatus(@PathVariable String STATUS){return repository.encontrarStatus(STATUS);}
-    @GetMapping("/filtarPrioridade/{prioridade}")
+    @GetMapping("/filtarPrioridade/{PRIORIDADE}")
     public List<tarefaModel> filtrarPorPrioridade(@PathVariable int PRIORIDADE){return repository.findByPRIORIDADE(PRIORIDADE);}
 
 }

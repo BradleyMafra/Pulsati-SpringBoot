@@ -5,7 +5,8 @@ import com.sun.jdi.connect.Connector;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
+import java.util.List;
+
 public interface livroRepository extends JpaRepository<livroModel,Integer> {
-    @Query(value="SELECT * FROM LIVRO WHERE AUTOR = ?1")
-    public livroModel findByAutor(String autor);
+
 }

@@ -12,7 +12,7 @@ public class filmeController {
     private filmeRepository repository;
     @GetMapping("/Buscar")
     public List<filmeModel> buscarTodos(){return repository.findAll();}
-    @GetMapping("Buscar/{id}")
+    @GetMapping("/Buscar/{id}")
     public filmeModel buscarPorId(@PathVariable int id){return repository.findById(id).get();}
     @PutMapping("/Atualizar")
     public filmeModel atualizar(@RequestBody filmeModel filme){return repository.save(filme);}

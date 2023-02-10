@@ -15,12 +15,12 @@ public class vendaController {
     private vendaReposittory repository;
     @GetMapping("/buscar")
     public List<vendaModel> buscaTodos(){return repository.findAll();}
-    @GetMapping("/buscar/{idProduto}")
+    @GetMapping("/buscar/{idVenda}")
     public vendaModel buscaPorID(@PathVariable int idVenda){return repository.findById(idVenda).get();}
     @PostMapping("/adicionar")
     public vendaModel adicionarVenda(@RequestBody vendaModel venda){return repository.save(venda);}
     @PutMapping("/atualizar")
     public vendaModel atualizarVenda(@RequestBody vendaModel venda){return repository.save(venda);}
-    @DeleteMapping("/deletar/{idProduto}")
+    @DeleteMapping("/deletar/{idVenda}")
     public void deletarVenda(@PathVariable int idVenda){repository.deleteById(idVenda);}
 }

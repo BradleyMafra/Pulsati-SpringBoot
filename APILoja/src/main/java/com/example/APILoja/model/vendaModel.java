@@ -1,6 +1,7 @@
 package com.example.APILoja.model;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Cascade;
 
 import java.sql.Date;
 
@@ -14,7 +15,7 @@ public class vendaModel {
     @ManyToOne
     @JoinColumn(name = "id_produto",referencedColumnName = "id_produto")
     private produtoModel produto;
-    @ManyToOne      // Aqui seria FK                       // AQUI O ID DA TABLE ABAIXO
+    @ManyToOne// Aqui seria FK                       // AQUI O ID DA TABLE ABAIXO
     @JoinColumn(name = "id_cliente",referencedColumnName = "id_cliente")
     private clienteModel cliente;
 
